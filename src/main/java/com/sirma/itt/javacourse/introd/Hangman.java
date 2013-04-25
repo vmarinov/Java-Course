@@ -191,7 +191,7 @@ public class Hangman {
 	 * Randomly picks a word from the secretWord array;
 	 */
 	public void generateSecretWord() {
-		int i = (int) Math.round(((Math.random() * secretWords.length) - 1));
+		int i = (int) Math.round(((Math.random() * (secretWords.length - 1))));
 		setWordToGuess(secretWords[i].toLowerCase());
 	}
 
