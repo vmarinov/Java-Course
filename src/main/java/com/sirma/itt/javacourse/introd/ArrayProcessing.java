@@ -14,7 +14,7 @@ public class ArrayProcessing {
 	 *            to be processed
 	 * @return returns the minimum element of the array
 	 */
-	static int getMinElement(int[] array) {
+	public static int getMinElement(int[] array) {
 		// used to store the minimum element
 		int minElement = array[0];
 
@@ -34,7 +34,7 @@ public class ArrayProcessing {
 	 *            to be summed.
 	 * @return Returns the sum of the elements in the array.
 	 */
-	static int getSum(int[] array) {
+	public static int getSum(int[] array) {
 		int sum = 0;
 		for (int x : array) {
 			sum += x;
@@ -49,7 +49,7 @@ public class ArrayProcessing {
 	 *            to be printed
 	 */
 
-	static void printArray(int[] array) {
+	public static void printArray(int[] array) {
 		for (int x : array) {
 			System.out.print(x + " ");
 		}
