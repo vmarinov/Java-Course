@@ -10,10 +10,9 @@ import org.junit.runners.JUnit4;
 public class LeastCommonMultipleTest {
 	@Test
 	public void findLcmTest() {
-		LeastCommonMultiple lcm = new LeastCommonMultiple();
-		int multiple = lcm.findLcm(14, 21);
+		int multiple = LeastCommonMultiple.findLcm(14, 21);
 		Assert.assertEquals(42, multiple);
-		multiple = lcm.findLcm(27, 42);
+		multiple = LeastCommonMultiple.findLcm(27, 42);
 		Assert.assertEquals(378, multiple);
 	}
 }
