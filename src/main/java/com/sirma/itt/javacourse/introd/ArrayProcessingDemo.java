@@ -2,7 +2,7 @@ package com.sirma.itt.javacourse.introd;
 
 /**
  * Run class for {@link ArrayProcessing}
- * 
+ *
  * @author Ventsislav Marinov
  */
 public class ArrayProcessingDemo {
@@ -10,11 +10,10 @@ public class ArrayProcessingDemo {
 		int[] array = { 4, 5, 6, 2, 0 };
 		int sum;
 		int minElement;
-		ArrayProcessing arrP = new ArrayProcessing();
-		sum = arrP.getSum(array);
+		sum = ArrayProcessing.getSum(array);
 		System.out.println(sum);
-		minElement = arrP.getMinElement(array);
+		minElement = ArrayProcessing.getMinElement(array);
 		System.out.println(minElement);
-		arrP.printArray(array);
+		ArrayProcessing.printArray(array);
 	}
 }
