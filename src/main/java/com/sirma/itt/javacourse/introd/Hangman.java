@@ -47,13 +47,13 @@ public class Hangman {
 	 * @param wordToGuess
 	 *            the word to guess
 	 */
-	public void initiateGame() {
-		generateSecretWord();
+	private void initiateGame() {
+		wordToGuess = generateSecretWord();
 		guessedLetters = new HashSet<String>();
 		sBuilder1 = new StringBuilder();
 		sBuilder1.append(getWordToGuess());
 		sBuilder2 = new StringBuilder();
-		setCurrentWord(hideWord(sBuilder1, sBuilder2));
+		currentWord = hideWord(sBuilder1, sBuilder2);
 		guessesLeft = GUESSES_LIMIT;
 	}
 
@@ -66,7 +66,7 @@ public class Hangman {
 	 *            Second StringBuilder object
 	 * @return transformed word
 	 */
-	public String hideWord(StringBuilder o, StringBuilder o2) {
+	private String hideWord(StringBuilder o, StringBuilder o2) {
 		o2.setLength(o.length());
 		for (int i = 0; i < o2.length(); i++) {
 			o2.setCharAt(i, '_');
@@ -92,7 +92,7 @@ public class Hangman {
 			for (int i = 0; i < (wordToGuess.length()); i++) {
 				// if there is such a letter it replaces the '_' letters in the current word
 				if (String.valueOf(wordToGuess.charAt(i)).equals(letter)) {
-					setCurrentWord(o2.replace(i, i + 1, String.valueOf(o.charAt(i))).toString());
+					currentWord = o2.replace(i, i + 1, String.valueOf(o.charAt(i))).toString();
 					found = true;
 				}
 			}
@@ -106,7 +106,8 @@ public class Hangman {
 				 */
 			} else {
 				System.out.println("The word doesn't contain the letter \"" + letter);
-				setGuessesLeft(guessesLeft - 1);
+				guessesLeft--;
+				// setGuessesLeft(guessesLeft - 1);
 			}
 			// prints in the console if the letter has already been guessed
 		} else {
@@ -120,7 +121,7 @@ public class Hangman {
 	 *
 	 * @return string of the letters.
 	 */
-	public String showGuessedLetters() {
+	private String showGuessedLetters() {
 		String contains = "";
 		Iterator<String> it = guessedLetters.iterator();
 		while (it.hasNext()) {
@@ -134,9 +135,8 @@ public class Hangman {
 	 *
 	 * @return the input letter
 	 */
-	public String inputLetter() {
-		InputStream in = System.in;
-		BufferedReader br = new BufferedReader(new InputStreamReader(in));
+	private String inputLetter() {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String line = null;
 		Character ch = 0;
 		try {
@@ -156,7 +156,7 @@ public class Hangman {
 	/**
 	 * Starts a new turn in the game.
 	 */
-	public void playTurn() {
+	private void playTurn() {
 		String letter = null;
 		System.out.println("Guessed letters so far are: " + showGuessedLetters());
 		System.out.println("Guesses left: " + getGuessesLeft());
@@ -190,15 +190,17 @@ public class Hangman {
 	/**
 	 * Randomly picks a word from the secretWord array;
 	 */
-	public void generateSecretWord() {
+	private String generateSecretWord() {
+		String word = "";
 		int i = (int) Math.round(((Math.random() * (secretWords.length - 1))));
-		setWordToGuess(secretWords[i].toLowerCase());
+		word = secretWords[i].toLowerCase();
+		return word;
 	}
 
 	/**
 	 * Asks the user for a new game. If he inputs Y/y it starts a new game.
 	 */
-	public void newGame() {
+	private void newGame() {
 		InputStream in = System.in;
 		BufferedReader br = new BufferedReader(new InputStreamReader(in));
 		String line = null;
@@ -226,40 +228,26 @@ public class Hangman {
 		return currentWord;
 	}
 
-	public void setCurrentWord(String currentWord) {
-		this.currentWord = currentWord;
-	}
 
 	public int getGuessesLeft() {
 		return guessesLeft;
 	}
 
-	public void setGuessesLeft(int guessesLeft) {
-		this.guessesLeft = guessesLeft;
-	}
 
 	public StringBuilder getsBuilder1() {
 		return sBuilder1;
 	}
 
-	public void setsBuilder1(StringBuilder sBuilder1) {
-		this.sBuilder1 = sBuilder1;
-	}
+
 
 	public StringBuilder getSBuilder2() {
 		return sBuilder2;
 	}
 
-	public void setSBuilder2(StringBuilder sbuilder2) {
-		this.sBuilder2 = sbuilder2;
-	}
 
 	public String getWordToGuess() {
 		return wordToGuess;
 	}
 
-	public void setWordToGuess(String wordToGuess) {
-		this.wordToGuess = wordToGuess;
-	}
 
 }
