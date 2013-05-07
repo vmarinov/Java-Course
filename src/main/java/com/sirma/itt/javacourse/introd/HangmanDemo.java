@@ -2,7 +2,7 @@ package com.sirma.itt.javacourse.introd;
 
 /**
  * Run class for {@link Hangman}
- * 
+ *
  * @author Ventsislav Marinov
  */
 public class HangmanDemo {
