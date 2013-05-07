@@ -10,11 +10,9 @@ import org.junit.runners.JUnit4;
 public class GreatestCommonDivisorTest {
 	@Test
 	public void findGcdTest() {
-		GreatestCommonDivisor greatestCommonDivisor = new GreatestCommonDivisor();
-		int commonDivisor = greatestCommonDivisor.findGcd(5, 20);
+		int commonDivisor = GreatestCommonDivisor.findGcd(5, 20);
 		Assert.assertEquals(5, commonDivisor);
-		greatestCommonDivisor = new GreatestCommonDivisor();
-		commonDivisor = greatestCommonDivisor.findGcd(10, 20);
+		commonDivisor = GreatestCommonDivisor.findGcd(10, 20);
 		Assert.assertEquals(10, commonDivisor);
 
 	}
