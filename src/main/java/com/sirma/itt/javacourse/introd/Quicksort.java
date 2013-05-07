@@ -2,10 +2,10 @@ package com.sirma.itt.javacourse.introd;
 
 /**
  * Class that implements quicksort.
- * 
+ *
  * @author Ventsislav Marinov
  */
-public class Quicksort implements Comparable<Integer> {
+public class Quicksort {
 
 	static void quicksort(Integer[] array) {
 		quicksort(array, 0, array.length - 1);
@@ -47,9 +47,4 @@ public class Quicksort implements Comparable<Integer> {
 		}
 	}
 
-	@Override
-	public int compareTo(Integer o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }
