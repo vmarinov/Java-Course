@@ -3,9 +3,9 @@ package com.sirma.itt.javacourse.io;
 import java.io.Serializable;
 
 public class UserDefinedObject implements Serializable {
-	private final String name;
-	private final int age;
-	private final String city;
+	private String name;
+	private int age;
+	private String city;
 
 	public void print() {
 		System.out.println("Name: " + name + " Age: " + age + " City: " + city);
