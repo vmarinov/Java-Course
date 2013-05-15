@@ -240,12 +240,12 @@ public class Dice {
 		 */
 		if (stats.containsKey(dieOne + "," + dieTwo)) {
 			System.out.println("Combination(" + dieOne + "," + dieTwo + ")"
-					+ " thrown at positions" + stats.get("Combination: " + dieOne + "," + dieTwo));
+					+ " thrown at positions" + stats.get(dieOne + "," + dieTwo));
 			System.out.println("Number of rolls: "
  + stats.get(dieOne + "," + dieTwo).size());
 		} else if (stats.containsKey(dieTwo + "," + dieOne)) {
 			System.out.println("Combination(" + dieOne + "," + dieTwo + ")"
-					+ " thrown at positions" + stats.get("Combination: " + dieTwo + "," + dieOne));
+					+ " thrown at positions" + stats.get(dieTwo + "," + dieOne));
 			System.out.println("Number of rolls: "
  + stats.get(dieTwo + "," + dieOne).size());
 		} else {
