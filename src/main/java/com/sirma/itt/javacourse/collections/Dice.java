@@ -69,27 +69,27 @@ public class Dice {
 		if (dieOne == dieTwo) {
 			if (dieOne == 1) {
 				roll11.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll11);
+				stats.put(dieOne + "," + dieTwo, roll11);
 			}
 			if (dieOne == 2) {
 				roll22.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll22);
+				stats.put(dieOne + "," + dieTwo, roll22);
 			}
 			if (dieOne == 3) {
 				roll33.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll33);
+				stats.put(dieOne + "," + dieTwo, roll33);
 			}
 			if (dieOne == 4) {
 				roll44.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll44);
+				stats.put(dieOne + "," + dieTwo, roll44);
 			}
 			if (dieOne == 5) {
 				roll55.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll55);
+				stats.put(dieOne + "," + dieTwo, roll55);
 			}
 			if (dieOne == 6) {
 				roll66.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll66);
+				stats.put(dieOne + "," + dieTwo, roll66);
 			}
 			/*
 			 * When the dice rolled different. Treats 1,2 the same as 2,1 etc.
@@ -97,63 +97,63 @@ public class Dice {
 		} else {
 			if ((dieOne == 1 && dieTwo == 2) || (dieOne == 2 && dieTwo == 1)) {
 				roll12.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll12);
+				stats.put(dieOne + "," + dieTwo, roll12);
 			}
 			if ((dieOne == 1 && dieTwo == 3) || (dieOne == 3 && dieTwo == 1)) {
 				roll13.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll13);
+				stats.put(dieOne + "," + dieTwo, roll13);
 			}
 			if ((dieOne == 1 && dieTwo == 4) || (dieOne == 4 && dieTwo == 1)) {
 				roll14.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll14);
+				stats.put(dieOne + "," + dieTwo, roll14);
 			}
 			if ((dieOne == 1 && dieTwo == 5) || (dieOne == 5 && dieTwo == 1)) {
 				roll15.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll15);
+				stats.put(dieOne + "," + dieTwo, roll15);
 			}
 			if ((dieOne == 1 && dieTwo == 6) || (dieOne == 6 && dieTwo == 1)) {
 				roll16.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll16);
+				stats.put(dieOne + "," + dieTwo, roll16);
 			}
 			if ((dieOne == 2 && dieTwo == 3) || (dieOne == 3 && dieTwo == 2)) {
 				roll23.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll23);
+				stats.put(dieOne + "," + dieTwo, roll23);
 			}
 			if ((dieOne == 2 && dieTwo == 4) || (dieOne == 4 && dieTwo == 2)) {
 				roll24.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll24);
+				stats.put(dieOne + "," + dieTwo, roll24);
 			}
 			if ((dieOne == 2 && dieTwo == 5) || (dieOne == 5 && dieTwo == 2)) {
 				roll25.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll25);
+				stats.put(dieOne + "," + dieTwo, roll25);
 			}
 			if ((dieOne == 2 && dieTwo == 6) || (dieOne == 6 && dieTwo == 2)) {
 				roll26.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll26);
+				stats.put(dieOne + "," + dieTwo, roll26);
 			}
 			if ((dieOne == 3 && dieTwo == 4) || (dieOne == 4 && dieTwo == 3)) {
 				roll34.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll34);
+				stats.put(dieOne + "," + dieTwo, roll34);
 			}
 			if ((dieOne == 3 && dieTwo == 5) || (dieOne == 5 && dieTwo == 3)) {
 				roll35.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll35);
+				stats.put(dieOne + "," + dieTwo, roll35);
 			}
 			if ((dieOne == 3 && dieTwo == 6) || (dieOne == 6 && dieTwo == 3)) {
 				roll36.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll36);
+				stats.put(dieOne + "," + dieTwo, roll36);
 			}
 			if ((dieOne == 4 && dieTwo == 5) || (dieOne == 5 && dieTwo == 4)) {
 				roll45.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll45);
+				stats.put(dieOne + "," + dieTwo, roll45);
 			}
 			if ((dieOne == 4 && dieTwo == 6) || (dieOne == 6 && dieTwo == 4)) {
 				roll46.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll46);
+				stats.put(dieOne + "," + dieTwo, roll46);
 			}
 			if ((dieOne == 5 && dieTwo == 6) || (dieOne == 6 && dieTwo == 5)) {
 				roll56.add(rollCount);
-				stats.put("Combination: " + dieOne + "," + dieTwo, roll56);
+				stats.put(dieOne + "," + dieTwo, roll56);
 			}
 		}
 
@@ -238,16 +238,16 @@ public class Dice {
 		 * message that this combination was not thrown. Treats combinations 1,2 the same as 2,1
 		 * etc.
 		 */
-		if (stats.containsKey("Combination: " + dieOne + "," + dieTwo)) {
+		if (stats.containsKey(dieOne + "," + dieTwo)) {
 			System.out.println("Combination(" + dieOne + "," + dieTwo + ")"
 					+ " thrown at positions" + stats.get("Combination: " + dieOne + "," + dieTwo));
 			System.out.println("Number of rolls: "
-					+ stats.get("Combination: " + dieOne + "," + dieTwo).size());
-		} else if (stats.containsKey("Combination: " + dieTwo + "," + dieOne)) {
+ + stats.get(dieOne + "," + dieTwo).size());
+		} else if (stats.containsKey(dieTwo + "," + dieOne)) {
 			System.out.println("Combination(" + dieOne + "," + dieTwo + ")"
 					+ " thrown at positions" + stats.get("Combination: " + dieTwo + "," + dieOne));
 			System.out.println("Number of rolls: "
-					+ stats.get("Combination: " + dieTwo + "," + dieOne).size());
+ + stats.get(dieTwo + "," + dieOne).size());
 		} else {
 			System.out.println("Combination(" + dieOne + "," + dieTwo + ")" + " was not thrown.");
 		}
