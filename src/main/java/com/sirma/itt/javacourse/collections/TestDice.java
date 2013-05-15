@@ -8,7 +8,7 @@ package com.sirma.itt.javacourse.collections;
  */
 public class TestDice {
 	public static void main(String args[]) {
-		Dice.initRoll(10);
+		Dice.initRoll(100);
 		Dice.getCombination(2, 3);
 		Dice.getCombination(4, 5);
 		Dice.getCombination(5, 4);
