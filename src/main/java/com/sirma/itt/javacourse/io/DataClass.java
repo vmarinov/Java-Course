@@ -7,24 +7,16 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class DataClass {
-	private static UserDefinedObject userObject;
-	private static Path filePath;
+	private Path filePath;
 
-	/**
-	 * Serializes an object, on set path.
-	 *
-	 * @param path
-	 *            path of the file
-	 * @param o
-	 *            object serialized
-	 */
 	public void saveObject(String path, UserDefinedObject o) {
 		filePath = Paths.get(path);
-		this.userObject = o;
+
 		if (Files.notExists(filePath)) {
 			new File(path);
 		}
@@ -40,15 +32,7 @@ public class DataClass {
 
 	}
 
-	/**
-	 * Gets serialized object.
-	 *
-	 * @param path
-	 *            the file path
-	 * @return deserialized object
-	 * @throws IOException
-	 */
-	public UserDefinedObject getObject(String path) throws IOException {
+	public UserDefinedObject getObject(String path) throws IOException, NoSuchFileException {
 		UserDefinedObject o = null;
 		try {
 			FileInputStream fileIn = new FileInputStream(path);
@@ -64,18 +48,16 @@ public class DataClass {
 			System.out.println("Class not found");
 			c.printStackTrace();
 		}
-		// Shows that the file is deserialized
-		o.print();
 		return o;
 	}
 
 	public static void main(String args[]) {
-		String fileName = "C:\\workspace jcourse\\Input-Output\\userdefinedobj2.ser";
+		String fileName = "src\\test\\java\\com\\sirma\\itt\\javacourse\\io\\resources\\userdefinedobj2.ser";
 		DataClass dClass = new DataClass();
 		UserDefinedObject udo = new UserDefinedObject("Charlie", 21, "Chicago");
 		dClass.saveObject(fileName, udo);
 		try {
-			dClass.getObject(fileName);
+			System.out.println(dClass.getObject(fileName));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
