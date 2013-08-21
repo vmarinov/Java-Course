@@ -9,6 +9,9 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -297,9 +300,18 @@ public class ClientLogic {
 	 *            the name of the file
 	 */
 	private void saveChatHistory(String fileName) {
-		String directory = "src\\main\\resources\\";
+		// String directory = "src\\main\\resources\\";
+		String directory = "C:\\ChatApp Logs\\";
+		Path path = Paths.get(directory);
 		String[] log = chatGui.getChatHistory();
-
+		if (!Files.exists(path)) {
+			try {
+				Files.createDirectories(path);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
 		File saveFile = new File(directory + fileName + ".txt");
 		try {
 
