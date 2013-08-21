@@ -301,7 +301,7 @@ public class ClientLogic {
 	 */
 	private void saveChatHistory(String fileName) {
 		// String directory = "src\\main\\resources\\";
-		String directory = "C:\\ChatApp Logs\\";
+		String directory = "C:\\ChatApp chat history\\";
 		Path path = Paths.get(directory);
 		String[] log = chatGui.getChatHistory();
 		if (!Files.exists(path)) {
