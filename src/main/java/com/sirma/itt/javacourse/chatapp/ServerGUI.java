@@ -70,6 +70,11 @@ public class ServerGUI extends JFrame implements ActionListener {
 		status.append(message + "\n");
 	}
 
+	public String[] getStatusText() {
+		String[] lines = status.getText().split("\t\r\n");
+		return lines;
+	}
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String cmd = e.getActionCommand();
