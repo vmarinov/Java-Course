@@ -1,7 +1,16 @@
 package com.sirma.itt.javacourse.chatapp;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -134,13 +143,44 @@ public class ServerLogic {
 		return serverThreads;
 	}
 
+	private void saveLog(String fileName) {
+		String directory = "C:\\ChatApp server logs\\";
+		Path path = Paths.get(directory);
+		String[] log = serverGUI.getStatusText();
+		if (!Files.exists(path)) {
+			try {
+				Files.createDirectories(path);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		File saveFile = new File(directory + fileName + ".txt");
+		try {
+
+			BufferedWriter fileWritter = new BufferedWriter(new FileWriter(saveFile, true));
+			for (String s : log) {
+				fileWritter.write(s + "\r\n");
+			}
+
+			fileWritter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
 	/**
 	 * Used to shutdown the server. Prints message in the server status field, and informs all
 	 * connected users.
 	 */
 	public void serverShutdown() {
+		SimpleDateFormat date = new SimpleDateFormat("MM-dd-YYYY");
+		Calendar cal = new GregorianCalendar();
 		listen = false;
 		serverGUI.setStatusText("Server connections closed. Server shut down.");
+		saveLog(date.format(cal.getTime()));
 		if (connectedUsersList != null) {
 			Iterator it = connectedUsersList.entrySet().iterator();
 			while (it.hasNext()) {
